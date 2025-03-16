@@ -37,6 +37,8 @@ export class FormsComponent implements OnInit{
       let {showClosed, hour} = this.formGroup.value
       this.filteredResults = this.filterUnitService.filter(this.results, showClosed, hour);
       this.unitService.setFilteredUnits(this.filteredResults);
+
+      this.submitEvent.emit();
   }
   
   onClean(): void {
